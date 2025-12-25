@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply antialiased text-slate-800 bg-[#F8FAFC];
+    /* Cool/Neutral White */
+    font-family: 'Inter', system-ui, sans-serif;
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Lora', serif;
+    /* Academic Authority */
+    @apply text-slate-900;
+  }
+}
+
+@layer utilities {
+  .btn-primary {
+    @apply bg-[#0F766E] hover:bg-[#0D9488] text-white font-medium py-2.5 px-6 rounded-md shadow-sm transition-colors text-sm tracking-wide;
+    /* Deep Teal, standard rounded corners */
+  }
+
+  .btn-outline {
+    @apply bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 font-medium py-2.5 px-6 rounded-md transition-colors text-sm;
+  }
+
+  /* Formal Input Style */
+  .input-formal {
+    @apply w-full px-4 py-2.5 bg-white border border-slate-300 focus:border-[#0F766E] focus:ring-1 focus:ring-[#0F766E] outline-none rounded-md transition-all text-slate-800 placeholder:text-slate-400 text-sm;
+  }
+
+  /* Official Card */
+  .card-official {
+    @apply bg-white border border-slate-200 shadow-sm rounded-lg p-8;
+  }
+}
+
+/* Print Specific Styles */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #printable-ticket,
+  #printable-ticket * {
+    visibility: visible;
+  }
+
+  #printable-ticket {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    border: 2px solid #000;
+  }
+
+  /* Hide header/footer/sidebar if they leak in */
+  nav,
+  footer,
+  button,
+  .date {
+    display: none !important;
+  }
+}

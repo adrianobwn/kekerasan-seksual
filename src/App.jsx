@@ -8,6 +8,10 @@ import TicketDetail from "./pages/TicketDetail";
 import AdminLogin from "./pages/admin/AdminLogin";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import ReportDetail from "./pages/admin/ReportDetail";
+import AdminLogs from "./pages/admin/AdminLogs";
+import AdminArchive from "./pages/admin/AdminArchive";
+
+import AdminLayout from "./pages/admin/AdminLayout";
 
 function App() {
   return (
@@ -25,10 +29,16 @@ function App() {
         <Route path="/status" element={<Layout><CheckStatus /></Layout>} />
         <Route path="/status/view" element={<Layout><TicketDetail /></Layout>} />
 
-        {/* Admin Routes (No Pubic Layout) */}
+        {/* Admin Login (Standalone) */}
         <Route path="/admin" element={<AdminLogin />} />
-        <Route path="/admin/dashboard" element={<AdminDashboard />} />
-        <Route path="/admin/report/:id" element={<ReportDetail />} />
+
+        {/* Protected Admin Routes (With Sidebar Layout) */}
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route path="dashboard" element={<AdminDashboard />} />
+          <Route path="logs" element={<AdminLogs />} />
+          <Route path="archive" element={<AdminArchive />} />
+          <Route path="report/:id" element={<ReportDetail />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

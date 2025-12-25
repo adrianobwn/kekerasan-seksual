@@ -63,10 +63,17 @@ const AdminLogin = () => {
                     </button>
                 </form>
 
-                <p className="text-center text-slate-600 text-xs mt-8">
+                <p className="text-center text-slate-600 text-xs mt-8 mb-4">
                     Unauthorized access is a punishable offense.<br />
                     System activity is monitored.
                 </p>
+
+                <button
+                    onClick={() => navigate("/")}
+                    className="w-full text-slate-500 hover:text-teal-400 text-xs transition-colors"
+                >
+                    &larr; Kembali ke Beranda Publik
+                </button>
 
             </div>
         </div>

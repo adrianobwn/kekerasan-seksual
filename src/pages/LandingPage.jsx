@@ -31,8 +31,11 @@ const LandingPage = () => {
                         Ajukan Laporan Resmi
                         <ChevronRight className="w-5 h-5 opacity-80" />
                     </button>
-                    <button className="btn-outline text-lg px-8 py-3">
-                        Panduan Pelaporan
+                    <button
+                        onClick={() => navigate("/status")}
+                        className="btn-outline text-lg px-8 py-3"
+                    >
+                        Cek Status Pengaduan
                     </button>
                 </div>
             </section>

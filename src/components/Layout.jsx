@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { AlertCircle } from "lucide-react";
+import { AlertCircle, Lock } from "lucide-react";
 
 const Layout = ({ children }) => {
     const quickExit = () => {
@@ -79,8 +79,12 @@ const Layout = ({ children }) => {
                         Berkomitmen menciptakan lingkungan pendidikan yang aman, sehat, dan bebas dari kekerasan seksual.
                         Melapor adalah langkah awal untuk memutus rantai kekerasan.
                     </p>
-                    <div className="mt-6 text-xs text-slate-400">
-                        &copy; {new Date().getFullYear()} Satuan Tugas PPKS Universitas Diponegoro.
+                    <div className="mt-6 text-xs text-slate-400 flex items-center justify-center gap-2">
+                        <span>&copy; {new Date().getFullYear()} Satuan Tugas PPKS Universitas Diponegoro.</span>
+                        <span className="mx-1">|</span>
+                        <a href="/admin" className="hover:text-slate-600 transition-colors" title="Akses Internal Satgas">
+                            <Lock className="w-3 h-3" />
+                        </a>
                     </div>
                 </div>
             </footer>
